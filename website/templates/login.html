@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block title %}Login Page{% endblock %}
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+{% block content %}
+    <section class="cta-main-login">
+        <div class="cta-form">
+            <div class="cta-img"><img src="./img/user.png" alt=""></div>
+            <h1>PRE - DOC</h1>
+            <a href="{{ url_for('auth.signup') }}">New User ?</a>
+            <form method="post">
+                <input type="text" placeholder="Enter your username" name="username" id="username"><br>
+                <input type="password" placeholder="Enter your password" name="password" id="password"><br><br>
+                <button id="login-button" onmouseover="moveButton()" onclick="checkLogin()">Login</button>
+            </form>
+        </div>
+    </section>
+
+{% block script %}
+<script>
+<!--        let buttonDisabled = false;-->
+<!--let buttonMoved = false;-->
+
+<!--function moveButton() {-->
+<!--    if (buttonDisabled) {-->
+<!--        return;-->
+<!--    }-->
+
+<!--    if (buttonMoved) {-->
+<!--        // Move the button back to its normal position-->
+<!--        document.getElementById("login-button").style.transform = "translate(0, 0)";-->
+<!--        buttonMoved = false;-->
+<!--    }-->
+
+<!--    const username = document.getElementById("username").value;-->
+<!--    const password = document.getElementById("password").value;-->
+<!--    const validUsername = "your_valid_username"; // Replace with the correct username-->
+<!--    const validPassword = "your_valid_password"; // Replace with the correct password-->
+
+<!--    if (username !== validUsername || password !== validPassword) {-->
+<!--        // Wrong username or password-->
+<!--        const button = document.getElementById("login-button");-->
+<!--        const maxX = 100; // Maximum horizontal displacement in pixels-->
+<!--        const maxY = 100; // Maximum vertical displacement in pixels-->
+
+<!--        // Calculate a random position within the specified range-->
+<!--        const randomX = Math.random() * (2 * maxX) - maxX; // Random number between -maxX and maxX-->
+<!--        const randomY = Math.random() * (2 * maxY) - maxY; // Random number between -maxY and maxY-->
+
+<!--        // Apply the new position-->
+<!--        button.style.transform = `translate(${randomX}px, ${randomY}px)`;-->
+<!--        buttonMoved = true;-->
+<!--    }-->
+<!--}-->
+
+<!--function checkLogin() {-->
+<!--    const username = document.getElementById("username").value;-->
+<!--    const password = document.getElementById("password").value;-->
+<!--    const validUsername = "your_valid_username"; // Replace with the correct username-->
+<!--    const validPassword = "your_valid_password"; // Replace with the correct password-->
+
+<!--    if (username === validUsername && password === validPassword) {-->
+<!--        // Correct username and password-->
+<!--        document.getElementById("login-button").removeAttribute("class");-->
+<!--        alert("Login successful!");-->
+<!--        // Add your login logic here, e.g., redirect to another page.-->
+<!--    } else {-->
+<!--        // Wrong username or password-->
+<!--        document.getElementById("login-button").classList.add("invalid");-->
+<!--        buttonDisabled = true;-->
+<!--        document.getElementById("login-button").classList.add("disabled");-->
+<!--        setTimeout(function () {-->
+<!--            document.getElementById("login-button").removeAttribute("class");-->
+<!--            buttonDisabled = false;-->
+<!--        }, 500);-->
+<!--    }-->
+<!--}-->
+</script>
+{% endblock %}
+{% endblock %}

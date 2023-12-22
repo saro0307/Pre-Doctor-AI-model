@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block title %}Home Page{% endblock %}
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+{% block content %}
+<section>
+    <nav>
+        <div class="cta-nav">
+            <div class="cta-logo">
+                <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="">
+            </div>
+            <div class="cta-account">
+                <h4>Ratheesh R</h4>
+                <p>Upgraded account</p>
+            </div>
+        </div>
+                <a href="{{ url_for('upgrade.new_chat2') }}">
+        <div class="cta-new-chat">
+            <ul>
+              <li>Start a new chat</li>
+            </ul>
+        </div>
+                    </a>
+        <div class="cta-nav-bottom">
+            <ul class="bottom-menu">
+                <a onclick="return confirm('Are you sure you wanna delete all conversations?');" href="{{ url_for('upgrade.clear2') }}"><li>Clear all conversations</li></a>
+                <li id="toggle-dark-mode">Switch Light Mode</li>
+                <li>Updates & FAQ</li>
+                <li><a href="">Log out</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <div class="cta-message">
+        {% if items %}
+            {% for item in items %}
+                    <div class="cta-bot-message">
+                        <img src="{{ url_for('static', filename='img/robot.png') }}" alt="">
+                        <p>{{ item.bot }}</p>
+
+                    </div>
+                    <div class="cta-user-message">
+
+                        <p>{{ item.user }}</p>
+                         <img src="{{ url_for('static', filename='img/user.png') }}" id="last-message" alt="">
+                    </div>
+            {% endfor %}
+        {% else %}
+
+    <div class="cta-main-title">
+            <div class="cta-title">
+                <h1>Welcome to <span>Pre-Doctor</span> </h1>
+            </div>
+            <div class="cta-context" >
+                <div class="cta-para">
+                    <h3>Use</h3>
+                    <p>Pariatur sint laborum cillum aute consectetur irure.</p>
+                </div>
+                <div class="cta-para">
+                    <h3>Design</h3>
+                    <p>Pariatur sint laborum cillum aute consectetur irure.</p>
+                </div>
+                <div class="cta-para">
+                    <h3>Ml Use</h3>
+                    <p>Pariatur sint laborum cillum aute consectetur irure.</p>
+                </div>
+
+            </div>
+        </div>
+
+        {% endif %}
+    </div><br>
+    <div class="form-container">
+        <form action="{{ url_for('upgrade.chat2') }}" method="post">
+            {% if var == "last" %}
+            <div class="cta-bot-message cta-current-message" ><label for="name">{{ sentence[0] }}</label></div>
+                <input type="text" id="name" class="input-field" name="user"  placeholder="Do you wanna continue?(YES/NO)" autofocus required>
+            {% else %}
+                <label class="cta-bot-message cta-current-message" for="name">{{ sentence[0] }}</label>
+                <input type="text" id="name" class="input-field" name="user" autofocus required>
+<!--                {{ sp }}-->
+            {% endif %}
+            <input type="submit" value="" class="submit-button">
+        </form>
+    </div>
+</section>
+{% block script %}
+<script>
+    window.onload = function() {
+        var messages = document.querySelector(".cta-message");
+        if (messages) {
+            messages.scrollTop = messages.scrollHeight;
+        }
+    };
+    </script>
+{% endblock %}
+{% endblock %}

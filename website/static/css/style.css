@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif !important;
+
+
+    /* border: 1px solid #fff; */
+
+}
+
+ body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+body.light-mode {
+    background-color: #fff;
+    color: #333;
+}
+
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+a:hover{
+text-decoration: none;
+    color: #fff;
+}
+
+body{
+    background: #222222;
+    color: #fff;
+    height:100vh !important;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100vh;
+
+}
+
+nav{
+    padding: 10px;
+    height: 97vh;
+    width: 20%;
+    background-color: #000;
+    border-radius: 10px;
+    position:fixed;
+    left: 20px;
+    top: 10px;
+}
+ .cta-nav{
+    display: flex;
+
+ }
+ .cta-logo{
+    margin: 0px 10px 0px 0px;
+ }
+
+ .cta-nav-bottom{
+    position: absolute;
+    bottom: 0;
+
+
+
+ }
+
+ .bottom-menu{
+    padding: 0px 40px;
+ }
+
+.bottom-menu li:nth-child(1){
+    list-style-image: url('/static/img/delete.svg');
+ }
+
+.bottom-menu li:nth-child(2){
+    list-style-image: url('/static/img/wb_sunny.svg');
+ }
+
+ .bottom-menu li:nth-child(3){
+    list-style-image: url('/static/img/upgrade.svg');
+ }
+
+ .bottom-menu li:nth-child(4){
+    list-style-image: url('/static/img/open_in_new.svg');
+ }
+
+.bottom-menu li:nth-child(5){
+    list-style-image: url('/static/img/logout.svg');
+    color: #FF5555;
+    font-weight: bold;
+ }
+ .bottom-menu li{
+    padding: 10px;
+    transition: all 0.3s ease;
+ }
+
+ .cta-new-chat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #019A5A;
+    background: linear-gradient(92deg, rgba(1, 154, 90, 0.70) -16.64%, rgba(1, 154, 90, 0.80) 117.28%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+ }
+
+ .cta-new-chat ul li{
+    padding-top: 5px;
+    font-size: 16px;
+    list-style-image: url('/static/img/add.svg');
+
+ }
+
+.cta-main{
+    width: 80%;
+    display: flex !important;
+    justify-content: center;
+    align-items: end;
+}
+.cta-title{
+    font-size: 2rem;
+}
+
+  .form-container {
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+    position: fixed;
+    bottom: 15px;
+    right: 25px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none !important;
+    background-color: transparent !important;
+    height: 30px;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+
+
+
+.input-field:active{
+    background-color: transparent;
+
+}
+.input-field:focus {
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.input-field:-webkit-autofill {
+    background-color: transparent !important; /* Override the autofill background color */
+}
+form{
+    width: 100%;
+    display: flex;
+    border-radius: 10px;
+    border: 1px solid #FFF;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    padding: 12px;
+    align-items: center;
+    gap: 12px;
+}
+/* Style for the submit button image */
+.submit-button {
+    height: 50px;
+    width: 50px;
+    background-image: url('/static/img/send.svg') !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    border-radius: 10px;
+    background-color: #019A5A;
+    border: 1px solid #019A5A;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+
+
+}
+
+
+.cta-message{
+    width: 75%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+}
+
+.cta-bot-message{
+    display: flex;
+    justify-content: start;
+    border-radius: 10px;
+    border: 1px solid  rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(16px);
+    height: fit-content;
+    padding: 20px 10px;
+    text-align: right;
+
+}
+
+.cta-bot-message img , .cta-user-message img{
+    height: 25px;
+    width: 25px;
+    margin: 0px 5px;
+}
+
+.cta-user-message{
+    display: flex;
+    justify-content: end;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    height: fit-content;
+    padding: 20px 10px;
+
+}
+
+.cta-message {
+            height: 70vh; /* Set the height to 80% of the viewport height */
+            overflow-y: scroll; /* Add a vertical scrollbar when content overflows */
+        }
+  /* Style for the scroll bar */
+  ::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #019A5A; /* Change the scroll bar thumb color to green */
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #222222; /* Change the scroll bar track color to black */
+}
+
+.cta-current-message{
+position:absolute;
+bottom:100px;
+background:#222;
+margin-top:100px !important;
+
+
+}
+
+
+.cta-main-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 90%;
+
+
+
+}
+.cta-title h1{
+    color: #E5E5E5;
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 72px */
+    letter-spacing: 0.96px;
+    margin-bottom:20px !important ;
+}
+.cta-context{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+.cta-para{
+    font-size: 1.2rem !important;
+    text-align: center !important;
+    width: 40%;
+    margin: 10px;
+    padding: 20px;
+    color: #E5E5E5;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%; /* 21px */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    border-radius: 25px;
+}
+
+.cta-para h3{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #E5E5E5;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 24px */
+}
+input[type="text"]::selection {
+  background: #your-selected-background-color; /* Change the background color for selected text */
+  color: #your-selected-text-color; /* Change the text color for selected text */
+}
+
+
+
+.cta-main-login {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cta-main-login .cta-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  height: 90%;
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
+  padding: 15px;
+  border-radius: 20px;
+}
+.cta-main-login .cta-form .cta-img {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.cta-main-login .cta-form .cta-img img {
+  height: 100px;
+  width: 100px;
+}
+.cta-main-login .cta-form h1 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+.cta-main-login .cta-form form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.cta-main-login .cta-form form input[type=text], .cta-main-login .cta-form form input[type=password],.cta-main-login .cta-form form input[type=email] {
+  width: 100%;
+  display: flex;
+  color: #FFF;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
+  padding: 12px;
+  align-items: center;
+  gap: 12px;
+}
+.cta-main-login .cta-form form input[type=text], .cta-main-login .cta-form form input[type=password]:active {
+  outline: none;
+  border: none;
+}
+.cta-main-login .cta-form form button {
+  height: 50px;
+  width: 100px;
+  color: #fff;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  background-color: #019A5A;
+  border: 1px solid #019A5A;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+}
+.cta-main-login .cta-form form #login-button {
+  height: 50px;
+  width: 100px;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 10px;
+  background-color: #019A5A;
+  border: 1px solid #019A5A;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  transition: transform 0.3s ease-in-out;
+  margin-top: 20px;
+}
+.cta-main-login .cta-form form #login-button.disabled {
+  cursor: not-allowed;
+  background-color: #ff0000;
+}
+.cta-main-login .cta-form form #login-button.invalid {
+  animation: shake 0.5s;
+}
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-5px, 0);
+  }
+  50% {
+    transform: translate(5px, 0);
+  }
+  75% {
+    transform: translate(-5px, 0);
+  }
+  100% {
+    transform: translate(5px, 0);
+  }
+}
+.cta-main-login .cta-form a {
+  text-align: center;
+  display: block;
+  padding: 20px 0px;
+}
+.cta-main-login .cta-form a:hover {
+  color: #019A5A;
+}
